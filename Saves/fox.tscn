@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://gxnk0dv6voe"]
+
+[ext_resource type="Texture2D" uid="uid://deemyog5hpxhf" path="res://assets/images/fox/fox-sheet.png" id="1_stjft"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1u5to"]
+atlas = ExtResource("1_stjft")
+region = Rect2(0, 0, 76, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbg8j"]
+atlas = ExtResource("1_stjft")
+region = Rect2(76, 0, 76, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ocrit"]
+atlas = ExtResource("1_stjft")
+region = Rect2(152, 0, 76, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6cxl"]
+atlas = ExtResource("1_stjft")
+region = Rect2(228, 0, 76, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wv346"]
+atlas = ExtResource("1_stjft")
+region = Rect2(304, 0, 76, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ld4j1"]
+atlas = ExtResource("1_stjft")
+region = Rect2(380, 0, 76, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ywfku"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1u5to")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbg8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ocrit")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6cxl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wv346")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ld4j1")
+}],
+"loop": true,
+"name": &"running",
+"speed": 10.0
+}]
+
+[node name="Area2D" type="Area2D" unique_id=1663632828]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2019833125]
+texture_filter = 1
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_ywfku")
+animation = &"running"
+frame_progress = 0.4105621
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D" unique_id=1642720327]

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dfe2qyfe2imvq"]
+
+[ext_resource type="PackedScene" uid="uid://dumsmjvx3k20l" path="res://Saves/player.tscn" id="1_nomy6"]
+[ext_resource type="PackedScene" uid="uid://cg1t3d6fbd318" path="res://Saves/levels/levelroot.tscn" id="2_gbppe"]
+
+[node name="main" type="Node2D" unique_id=157494617]
+
+[node name="level1" parent="." unique_id=669684448 instance=ExtResource("2_gbppe")]
+
+[node name="player" parent="." unique_id=418627504 instance=ExtResource("1_nomy6")]
+position = Vector2(98, 566)
