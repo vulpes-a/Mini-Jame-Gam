@@ -102,9 +102,9 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf3dv"]
-size = Vector2(37, 61)
+size = Vector2(37, 56)
 
-[node name="player" type="CharacterBody2D" unique_id=418627504]
+[node name="player" type="CharacterBody2D" unique_id=418627504 groups=["Player"]]
 scale = Vector2(0.8, 0.8)
 script = ExtResource("1_yf3dv")
 
@@ -117,5 +117,6 @@ autoplay = "idling"
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=319657498]
-position = Vector2(0.5, 25.5)
+position = Vector2(0.49999985, 27.999992)
+scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("RectangleShape2D_yf3dv")
