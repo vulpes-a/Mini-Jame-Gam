@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://gxnk0dv6voe"]
 
+[ext_resource type="Script" uid="uid://b0ttab2ug11xk" path="res://Saves/Scripts/fox.gd" id="1_1u5to"]
 [ext_resource type="Texture2D" uid="uid://deemyog5hpxhf" path="res://assets/images/fox/fox-sheet.png" id="1_stjft"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1u5to"]
@@ -52,13 +53,36 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Area2D" type="Area2D" unique_id=1663632828]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_stjft"]
+size = Vector2(46.4, 18.399998)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_stjft"]
+radius = 32.0
+height = 70.0
+
+[node name="Fox" type="Area2D" unique_id=1663632828]
+script = ExtResource("1_1u5to")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2019833125]
 texture_filter = 1
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_ywfku")
 animation = &"running"
+autoplay = "running"
 frame_progress = 0.4105621
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D" unique_id=1642720327]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1642720327]
+position = Vector2(-3.0000076, 21.999994)
+scale = Vector2(2.4999995, 2.4999995)
+shape = SubResource("RectangleShape2D_stjft")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=970458217]
+position = Vector2(24, 0)
+shape = SubResource("CapsuleShape2D_stjft")
+
+[node name="Timer" type="Timer" parent="." unique_id=189043324]
+wait_time = 2.0
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

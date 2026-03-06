@@ -1,13 +1,20 @@
 extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var player: CharacterBody2D = $"."
 
+const SPEED = 400.0
+const JUMP_VELOCITY = -930.0
+var alive = true
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -800.0
-
+func respawn():
+	self.global_position = Vector2(115, 577)
 
 func _physics_process(delta: float) -> void:
 	
+	
+	if !alive:
+		return
+		
 	if velocity.x > 1 or velocity.x < -1:
 		animated_sprite_2d.animation = "running"
 	else:
@@ -21,9 +28,11 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("up") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		
+	if Input.is_action_just_released("up"):
+		player.velocity.y *= 0.3
 
 	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * SPEED
@@ -36,3 +45,8 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.flip_h = false
 	elif direction == -1.0:
 		animated_sprite_2d.flip_h = true
+		
+
+func die() -> void:
+	animated_sprite_2d.animation = "hurting"
+	alive = false
