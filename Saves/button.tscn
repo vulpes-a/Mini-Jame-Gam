@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dxuauwe2u5vga"]
+
+[ext_resource type="Script" uid="uid://bqnai3hkfnv5a" path="res://Saves/Scripts/button.gd" id="1_gsdq0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gsdq0"]
+
+[node name="Button" type="Button" unique_id=2032988501]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_gsdq0")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=716368784]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1846982626]
+shape = SubResource("RectangleShape2D_gsdq0")
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]
