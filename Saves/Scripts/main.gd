@@ -1,37 +1,30 @@
 extends Node2D
+@onready var level_container = $LevelContainer
 
-var score: int = 0
+func load_level(path):
+	for child in level_container.get_children():
+		child.queue_free()
 
-# Called when the node enters the scene tree for the first time.
+	var level = load(path).instantiate()
+	level_container.add_child(level)
+	
 func _ready() -> void:
-	_setup_level()
+	load_level("res://Saves/levels/level_0.tscn")
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
 
+
 func _setup_level() -> void:
-	# Connect keys
-	var coins = $level1.get_node_or_null("Coins")
-	if coins:
-		for Spike in coins.get_children():
-			Spike.collected.connect(increase_score)
-	
-	
-	# Connect enemies
-	var enemies = $level1.get_node_or_null("Enemies")
-	if enemies:
-		for Spike in enemies.get_children():
-			Spike.player_died.connect(_on_player_died)
+	# Connect spikes
+	var spikes = $level_0.get_node_or_null("Spikes")
+	if spikes:
+		for spike in spikes.get_children():
+			spike.player_died.connect(_on_player_died)
 
-# Signal handlers
 
-func _on_player_died(body):
+# Signal handler
+func _on_player_died(body) -> void:
 	body.die()
 	body.respawn()
 	print("Player killed")
-	
-func increase_score() -> void:
-	score += 1
-	print(score)

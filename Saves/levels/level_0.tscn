@@ -365,12 +365,12 @@ tile_map_data = PackedByteArray("AAAAAA4AAAABAAMAAAAAAA0AAAABAAIAAAAAAAwAAAABAAI
 tile_set = SubResource("TileSet_4w0ck")
 
 [node name="player" parent="." unique_id=418627504 instance=ExtResource("3_0aauq")]
-position = Vector2(133.00002, 406)
+position = Vector2(131, 402)
 
 [node name="Nextlevel" parent="." unique_id=1609801700 instance=ExtResource("4_m4o1h")]
 position = Vector2(1269, 384)
 
-[connection signal="body_entered" from="Button1/button1" to="player" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Button1/button1" to="Button1" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Button1/button1" to="player" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Button1/button1" to="player" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Button1/button1" to="Button1" method="_on_area_2d_body_exited"]
+[connection signal="body_exited" from="Button1/button1" to="player" method="_on_area_2d_body_exited"]

@@ -5,7 +5,7 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_53x58"]
 height = 104.0
 
-[node name="Nextlevel" type="Area2D" unique_id=1609801700]
+[node name="Nextlevel1" type="Area2D" unique_id=1609801700]
 script = ExtResource("1_53x58")
 metadata/_edit_group_ = true
 

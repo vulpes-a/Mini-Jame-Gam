@@ -148,4 +148,5 @@ volume_db = -20.07
 
 [node name="Maintheme" type="AudioStreamPlayer" parent="." unique_id=1570814108]
 stream = ExtResource("26_kqdj7")
+volume_db = -20.07
 autoplay = true

@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://cx8eh3el38joa" path="res://Saves/Scripts/falling_spikes.gd" id="4_kss1r"]
 [ext_resource type="PackedScene" uid="uid://ch3vttbofd2ro" path="res://Saves/nextlevel.tscn" id="5_71t1d"]
 [ext_resource type="PackedScene" uid="uid://bc82apvaxarqw" path="res://Saves/spike.tscn" id="6_kss1r"]
+[ext_resource type="Script" uid="uid://doodfxpywwths" path="res://Saves/Scripts/nextlevel2.gd" id="7_rf314"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nrbth"]
 texture = ExtResource("2_qfues")
@@ -403,9 +404,6 @@ tile_map_data = PackedByteArray("AAALAAUAAAAEAAQAAAAIAAcAAAAEAAQAAAAQAAMAAAAEAAQ
 tile_set = SubResource("TileSet_mdm6y")
 script = ExtResource("4_kss1r")
 
-[node name="Nextlevel" parent="." unique_id=1609801700 instance=ExtResource("5_71t1d")]
-position = Vector2(1269, 331)
-
 [node name="TileMapLayer3" type="TileMapLayer" parent="." unique_id=383723232]
 position = Vector2(-5, 0)
 scale = Vector2(3, 3)
@@ -416,3 +414,7 @@ tile_set = SubResource("TileSet_rf314")
 position = Vector2(632, 643)
 rotation = 1.5707964
 scale = Vector2(1, 39)
+
+[node name="Nextlevel2" parent="." unique_id=1609801700 instance=ExtResource("5_71t1d")]
+position = Vector2(1269, 331)
+script = ExtResource("7_rf314")

@@ -1,9 +1,9 @@
 extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-@onready var player: CharacterBody2D = $"."
 @onready var jump: AudioStreamPlayer = $Jump
 @onready var timefreeze_whistle: AudioStreamPlayer = $"Timefreeze&whistle"
 @onready var timeunfreeze: AudioStreamPlayer = $Timeunfreeze
+@onready var player: CharacterBody2D = $"."
 
 const SPEED = 340.0
 const JUMP_VELOCITY = -930.0
@@ -17,11 +17,11 @@ func respawn():
 
 func _physics_process(delta: float) -> void:
 	
-	if Input.is_action_just_pressed("reset_level"):
-		get_tree().reload_current_scene()
-		
 	if !alive:
 		return
+		
+	if Input.is_action_just_pressed("reset_level"):
+		get_tree().reload_current_scene()
 
 	# Add the gravity.
 	if not is_on_floor():
@@ -34,7 +34,7 @@ func _physics_process(delta: float) -> void:
 		jump.play()
 		
 	if Input.is_action_just_released("up"):
-		player.velocity.y *= 0.5
+		velocity.y *= 0.5
 
 	# Get the input direction and handle the movement/deceleration.
 	var direction := Input.get_axis("left", "right")
@@ -46,7 +46,7 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		if direction == 0:
 			animated_sprite_2d.animation = "idling"
-		elif direction > 0 or direction < 0:
+		elif direction != 0:
 			animated_sprite_2d.animation = "running"
 	else:
 		animated_sprite_2d.animation = "jumping"
