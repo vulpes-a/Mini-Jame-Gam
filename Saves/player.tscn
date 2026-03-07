@@ -22,6 +22,10 @@
 [ext_resource type="Texture2D" uid="uid://biunmr84w1qs2" path="res://assets/images/player/run-6.png" id="17_wn6pk"]
 [ext_resource type="Texture2D" uid="uid://cflt882p6w6w6" path="res://assets/images/player/run-7.png" id="18_nppq5"]
 [ext_resource type="Texture2D" uid="uid://d2iy63lgw8ng7" path="res://assets/images/player/run-8.png" id="19_55ci2"]
+[ext_resource type="AudioStream" uid="uid://bn6w6ugotvmi1" path="res://assets/sound/sfx/jump.wav" id="23_rwkbh"]
+[ext_resource type="AudioStream" uid="uid://d2modyp01nauq" path="res://assets/sound/sfx/timefreeze&whistle.wav" id="24_kqdj7"]
+[ext_resource type="AudioStream" uid="uid://dan64jxnhxtj7" path="res://assets/sound/sfx/timeunfreeze.wav" id="25_cr47m"]
+[ext_resource type="AudioStream" uid="uid://c0cf4wxpymhmy" path="res://assets/sound/music/maintheme/maintheme.mp3" id="26_kqdj7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e40nb"]
 animations = [{
@@ -119,11 +123,29 @@ script = ExtResource("1_yf3dv")
 texture_filter = 1
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_e40nb")
-animation = &"hurting"
+animation = &"jumping"
 autoplay = "idling"
+frame_progress = 0.8426226
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=319657498]
 position = Vector2(3.7252896e-08, -1.2500004)
 scale = Vector2(0.9999995, 0.9999995)
 shape = SubResource("RectangleShape2D_yf3dv")
+
+[node name="Jump" type="AudioStreamPlayer" parent="." unique_id=1740014783]
+stream = ExtResource("23_rwkbh")
+volume_db = -10.035
+pitch_scale = 1.35
+
+[node name="Timefreeze&whistle" type="AudioStreamPlayer" parent="." unique_id=453056779]
+stream = ExtResource("24_kqdj7")
+volume_db = -20.11
+
+[node name="Timeunfreeze" type="AudioStreamPlayer" parent="." unique_id=1504632373]
+stream = ExtResource("25_cr47m")
+volume_db = -20.07
+
+[node name="Maintheme" type="AudioStreamPlayer" parent="." unique_id=1570814108]
+stream = ExtResource("26_kqdj7")
+autoplay = true

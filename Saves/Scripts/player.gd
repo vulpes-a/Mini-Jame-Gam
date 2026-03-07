@@ -1,8 +1,11 @@
 extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var player: CharacterBody2D = $"."
+@onready var jump: AudioStreamPlayer = $Jump
+@onready var timefreeze_whistle: AudioStreamPlayer = $"Timefreeze&whistle"
+@onready var timeunfreeze: AudioStreamPlayer = $Timeunfreeze
 
-const SPEED = 400.0
+const SPEED = 340.0
 const JUMP_VELOCITY = -930.0
 var alive = true
 var stop_time = false
@@ -28,6 +31,7 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("up") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		jump.play()
 		
 	if Input.is_action_just_released("up"):
 		player.velocity.y *= 0.5
@@ -51,9 +55,10 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("stop_time") and !stop_time:
 		stop_time = true
-		print('stop_time')
-		await get_tree().create_timer(6.0).timeout
-		print('continue_time')
+		timefreeze_whistle.play()
+		await get_tree().create_timer(3.5).timeout
+		timeunfreeze.play()
+		await get_tree().create_timer(2.5).timeout
 		stop_time = false
 
 	move_and_slide()

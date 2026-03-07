@@ -14,11 +14,13 @@ func _process(_delta: float) -> void:
 	pass
 	
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	animated_sprite_2d.animation = "pressed"
 	if body.is_in_group("Player") and player.stop_time == false:
 		parede_que_sobe.position.y = -90
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
+	animated_sprite_2d.animation = "unpressed"
 	if body.is_in_group("Player") and player.stop_time == false:
 		parede_que_sobe.position.y = 10
 	else:

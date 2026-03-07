@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bc82apvaxarqw"]
+
+[ext_resource type="Script" uid="uid://gn2j8lxq27y" path="res://Saves/spike.gd" id="1_gbyiu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cuwis"]
+
+[node name="Spike" type="Area2D" unique_id=1689915709]
+script = ExtResource("1_gbyiu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=275564212]
+shape = SubResource("CapsuleShape2D_cuwis")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

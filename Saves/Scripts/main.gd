@@ -15,15 +15,15 @@ func _setup_level() -> void:
 	# Connect keys
 	var coins = $level1.get_node_or_null("Coins")
 	if coins:
-		for enemy in coins.get_children():
-			enemy.collected.connect(increase_score)
+		for Spike in coins.get_children():
+			Spike.collected.connect(increase_score)
 	
 	
 	# Connect enemies
 	var enemies = $level1.get_node_or_null("Enemies")
 	if enemies:
-		for enemy in enemies.get_children():
-			enemy.player_died.connect(_on_player_died)
+		for Spike in enemies.get_children():
+			Spike.player_died.connect(_on_player_died)
 
 # Signal handlers
 
