@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jn5nybdq77dg"
-path="res://.godot/imported/jump-2.png-0006926cc8cfa0b271cb085837b707d8.ctex"
+uid="uid://2wae1avrp3kg"
+path="res://.godot/imported/salto9.png-429323cf8f835e59e04894484566ee93.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/player/jump-2.png"
-dest_files=["res://.godot/imported/jump-2.png-0006926cc8cfa0b271cb085837b707d8.ctex"]
+source_file="res://assets/images/player/salto9.png"
+dest_files=["res://.godot/imported/salto9.png-429323cf8f835e59e04894484566ee93.ctex"]
 
 [params]
 
