@@ -5,9 +5,10 @@ extends Area2D
 signal collected
 
 func _on_body_entered(_body: Node2D) -> void:
-	animated_sprite_2d.animation = "key_collected"
 	collected.emit()
 	call_deferred("_disable_collision")
+	self.queue_free()
+	
 
 
 func _disable_collision() -> void:

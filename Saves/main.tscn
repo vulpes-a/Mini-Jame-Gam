@@ -1,15 +1,13 @@
 [gd_scene format=3 uid="uid://dfe2qyfe2imvq"]
 
 [ext_resource type="Script" uid="uid://bq4o23wmnu8m7" path="res://Saves/Scripts/main.gd" id="1_gbppe"]
-[ext_resource type="PackedScene" uid="uid://cg1t3d6fbd318" path="res://Saves/levels/levelroot.tscn" id="2_gbppe"]
+[ext_resource type="PackedScene" uid="uid://cg1t3d6fbd318" path="res://Saves/levels/level_0.tscn" id="2_gbppe"]
+[ext_resource type="PackedScene" uid="uid://87cmam7aowk2" path="res://Saves/levels/level_1.tscn" id="3_62so0"]
 
 [node name="main" type="Node2D" unique_id=157494617]
 script = ExtResource("1_gbppe")
 
 [node name="level1" parent="." unique_id=669684448 instance=ExtResource("2_gbppe")]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=308096093]
-
-[node name="Score" type="Panel" parent="CanvasLayer" unique_id=716969498]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Level2" parent="." unique_id=1370004062 instance=ExtResource("3_62so0")]
+position = Vector2(1408, -1)

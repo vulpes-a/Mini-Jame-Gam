@@ -7,7 +7,10 @@ const JUMP_VELOCITY = -930.0
 var alive = true
 
 func respawn():
+	await get_tree().create_timer(1.0).timeout
+	get_tree().reload_current_scene()
 	self.global_position = Vector2(115, 577)
+	alive = true
 
 func _physics_process(delta: float) -> void:
 	

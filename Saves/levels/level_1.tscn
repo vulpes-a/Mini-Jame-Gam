@@ -1,0 +1,140 @@
+[gd_scene format=4 uid="uid://87cmam7aowk2"]
+
+[ext_resource type="Texture2D" uid="uid://c4o71ddtgw87n" path="res://assets/images/Background/back.png" id="1_0kf8b"]
+[ext_resource type="Texture2D" uid="uid://cg57k3cc3e3cv" path="res://assets/images/tilemap/tileset.png" id="2_qfues"]
+[ext_resource type="PackedScene" uid="uid://dumsmjvx3k20l" path="res://Saves/player.tscn" id="3_qfues"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nrbth"]
+texture = ExtResource("2_qfues")
+15:0/0 = 0
+16:0/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+12:1/0 = 0
+15:1/0 = 0
+16:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+7:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+12:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+17:3/0 = 0
+4:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+16:4/0 = 0
+17:4/0 = 0
+1:5/0 = 0
+3:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+12:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+16:5/0 = 0
+17:5/0 = 0
+1:6/0 = 0
+3:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+16:6/0 = 0
+17:6/0 = 0
+18:6/0 = 0
+19:6/0 = 0
+20:6/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+14:7/0 = 0
+15:7/0 = 0
+16:7/0 = 0
+17:7/0 = 0
+18:7/0 = 0
+19:7/0 = 0
+20:7/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+16:8/0 = 0
+17:8/0 = 0
+18:8/0 = 0
+19:8/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+16:9/0 = 0
+17:9/0 = 0
+18:9/0 = 0
+19:9/0 = 0
+20:9/0 = 0
+23:9/0 = 0
+24:9/0 = 0
+14:10/0 = 0
+15:10/0 = 0
+16:10/0 = 0
+17:10/0 = 0
+18:10/0 = 0
+19:10/0 = 0
+20:10/0 = 0
+21:10/0 = 0
+23:10/0 = 0
+24:10/0 = 0
+14:11/0 = 0
+15:11/0 = 0
+16:11/0 = 0
+17:11/0 = 0
+21:11/0 = 0
+23:11/0 = 0
+24:11/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_qao1q"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_nrbth")
+
+[node name="level2" type="Node2D" unique_id=1370004062]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1750302745]
+texture_filter = 1
+offset_right = 426.6667
+offset_bottom = 240.0
+scale = Vector2(3, 3)
+texture = ExtResource("1_0kf8b")
+stretch_mode = 1
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=881048533]
+scale = Vector2(3, 3)
+tile_map_data = PackedByteArray("AAAAAA4AAAACAAEAAAABAA4AAAACAAEAAAACAA4AAAACAAEAAAADAA4AAAACAAEAAAAEAA4AAAACAAEAAAAFAA4AAAACAAEAAAAGAA4AAAACAAEAAAAHAA4AAAACAAEAAAAIAA4AAAACAAEAAAAJAA4AAAACAAEAAAAKAA4AAAACAAEAAAALAA4AAAACAAEAAAAMAA4AAAACAAEAAAANAA4AAAACAAEAAAAOAA4AAAACAAEAAAAPAA4AAAACAAEAAAAQAA4AAAACAAEAAAARAA4AAAACAAEAAAASAA4AAAACAAEAAAATAA4AAAACAAEAAAAUAA4AAAACAAEAAAAVAA4AAAACAAEAAAAWAA4AAAACAAEAAAAXAA4AAAACAAEAAAAYAA4AAAACAAEAAAAZAA4AAAACAAEAAAAaAA4AAAACAAEAAAAAAA0AAAAFAAIAAAAAAAwAAAAFAAIAAAAAAAsAAAAFAAIAAAAAAAoAAAAFAAIAAAAAAAkAAAAFAAEAAAABAAkAAAAEAAEAAAACAAkAAAAEAAEAAAADAAkAAAAEAAEAAAAEAAkAAAAEAAEAAAAGAAkAAAAEAAEAAAAFAAkAAAAEAAEAAAABAAoAAAAEAAIAAAABAAsAAAAEAAIAAAABAAwAAAAEAAIAAAABAA0AAAAEAAIAAAACAA0AAAAEAAIAAAADAA0AAAAEAAIAAAAEAA0AAAAEAAIAAAAEAAwAAAAEAAIAAAAFAAwAAAAEAAIAAAAEAAsAAAAEAAIAAAAEAAoAAAAEAAIAAAADAAoAAAAEAAIAAAACAAoAAAAEAAIAAAACAAsAAAAEAAIAAAACAAwAAAAEAAIAAAADAAwAAAAEAAIAAAADAAsAAAAEAAIAAAAFAAsAAAAEAAIAAAAFAAoAAAAEAAIAAAAGAAoAAAAEAAIAAAAGAAsAAAAEAAIAAAAFAA0AAAAEAAIAAAAGAA0AAAAEAAIAAAAGAAwAAAAEAAIAAAAHAAkAAAAFAAEAAAAHAAoAAAAFAAIAAAAHAAsAAAAFAAIAAAAHAAwAAAAFAAIAAAAHAA0AAAAFAAIAAAAAAAYAAAAFAAIAAAAAAAUAAAAFAAIAAAAAAAQAAAAFAAIAAAAAAAMAAAAFAAIAAAAAAAIAAAAFAAIAAAAAAAEAAAAFAAIAAAAAAAAAAAAFAAIAAAD//wcAAAAFAAIAAAD//wgAAAAFAAIAAAA=")
+tile_set = SubResource("TileSet_qao1q")
+
+[node name="player" parent="." unique_id=418627504 instance=ExtResource("3_qfues")]
+position = Vector2(30.000004, 387)
