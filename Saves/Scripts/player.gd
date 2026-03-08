@@ -70,7 +70,6 @@ func _physics_process(delta: float) -> void:
 		stop_time = true
 		audiostreams.timefreeze_whistle.play()
 		audiostreams.freeze_theme()
-		prints("Player")
 		
 		await get_tree().create_timer(3.5).timeout
 		audiostreams.timeunfreeze.play()
