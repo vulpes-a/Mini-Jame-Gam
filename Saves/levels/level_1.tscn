@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://bc82apvaxarqw" path="res://Saves/spike.tscn" id="6_kss1r"]
 [ext_resource type="Script" path="res://Saves/Scripts/falling_ice.gd" id="6_qijoy"]
 [ext_resource type="Script" uid="uid://doodfxpywwths" path="res://Saves/Scripts/nextlevel2.gd" id="7_rf314"]
+[ext_resource type="Texture2D" uid="uid://onh5o54ljha" path="res://assets/images/Background/parte_azul.png" id="10_dj74y"]
+[ext_resource type="Script" uid="uid://dv6pg0tuvdsvc" path="res://Saves/Scripts/blueshade.gd" id="11_swlyo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vdma4"]
 texture = ExtResource("4_dj74y")
@@ -194,3 +196,14 @@ script = ExtResource("7_rf314")
 
 [node name="player" parent="." unique_id=418627504 instance=ExtResource("3_qfues")]
 position = Vector2(22, 402)
+
+[node name="blueshade" type="TextureRect" parent="." unique_id=690240743]
+texture_filter = 1
+offset_left = -96.0
+offset_top = -152.99997
+offset_right = 424.6667
+offset_bottom = 168.66672
+scale = Vector2(3, 3)
+texture = ExtResource("10_dj74y")
+expand_mode = 1
+script = ExtResource("11_swlyo")

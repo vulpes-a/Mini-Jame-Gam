@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://cd5j743axfsws" path="res://assets/images/button/placapressao1.png" id="5_s1cof"]
 [ext_resource type="PackedScene" uid="uid://bc82apvaxarqw" path="res://Saves/spike.tscn" id="6_iwseq"]
 [ext_resource type="Script" path="res://Saves/Scripts/prensa.gd" id="7_g6qpn"]
+[ext_resource type="Texture2D" uid="uid://onh5o54ljha" path="res://assets/images/Background/parte_azul.png" id="10_m4gnm"]
+[ext_resource type="Script" uid="uid://dv6pg0tuvdsvc" path="res://Saves/Scripts/blueshade.gd" id="11_ahmpk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ahmpk"]
 texture = ExtResource("2_s1cof")
@@ -401,6 +403,17 @@ tile_set = SubResource("TileSet_ahmpk")
 
 [node name="player" parent="." unique_id=418627504 instance=ExtResource("3_nrbth")]
 position = Vector2(138, 648)
+
+[node name="blueshade" type="TextureRect" parent="." unique_id=72342367]
+texture_filter = 1
+offset_left = -96.0
+offset_top = -152.99997
+offset_right = 424.6667
+offset_bottom = 168.66672
+scale = Vector2(3, 3)
+texture = ExtResource("10_m4gnm")
+expand_mode = 1
+script = ExtResource("11_ahmpk")
 
 [connection signal="timeout" from="Prensa/Timer" to="Prensa" method="_on_timer_timeout"]
 [connection signal="body_entered" from="Button3/button3" to="Button3" method="_on_area_2d_body_entered"]

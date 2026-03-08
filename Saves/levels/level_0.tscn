@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://ch3vttbofd2ro" path="res://Saves/nextlevel.tscn" id="4_m4o1h"]
 [ext_resource type="Script" uid="uid://bqnai3hkfnv5a" path="res://Saves/Scripts/button.gd" id="5_f5j4t"]
 [ext_resource type="Texture2D" uid="uid://crlneg4vkpwlk" path="res://assets/images/tilemap/tilesset.png" id="7_ijh3q"]
+[ext_resource type="Texture2D" uid="uid://onh5o54ljha" path="res://assets/images/Background/parte_azul.png" id="8_2d8ks"]
+[ext_resource type="Script" uid="uid://dv6pg0tuvdsvc" path="res://Saves/Scripts/blueshade.gd" id="9_ov00l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4deq5"]
 size = Vector2(89, 18.5)
@@ -257,6 +259,17 @@ tile_set = SubResource("TileSet_ov00l")
 
 [node name="player" parent="." unique_id=418627504 instance=ExtResource("3_0aauq")]
 position = Vector2(131, 402)
+
+[node name="blueshade" type="TextureRect" parent="." unique_id=1285724112]
+texture_filter = 1
+offset_left = -96.0
+offset_top = -152.99997
+offset_right = 424.6667
+offset_bottom = 168.66672
+scale = Vector2(3, 3)
+texture = ExtResource("8_2d8ks")
+expand_mode = 1
+script = ExtResource("9_ov00l")
 
 [connection signal="body_entered" from="Button1/button1" to="Button1" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Button1/button1" to="player" method="_on_area_2d_body_entered"]

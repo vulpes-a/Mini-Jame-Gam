@@ -18,6 +18,7 @@ func _ready() -> void:
 	audiostreams.walk_timer.one_shot = true
 	audiostreams.walk_timer.wait_time = 0.25
 	audiostreams.walk_timer.start()
+	audiostreams.unfreeze_theme()
 	
 
 func respawn():
@@ -78,7 +79,8 @@ func _physics_process(delta: float) -> void:
 		audiostreams.freeze_theme()
 		await get_tree().create_timer(1.0).timeout
 		is_apitando = false
-		await get_tree().create_timer(2.5).timeout
+		await get_tree().create_timer(2.4).timeout
+		await get_tree().create_timer(0.1).timeout
 		audiostreams.timeunfreeze.play()
 		await get_tree().create_timer(2.5).timeout
 
