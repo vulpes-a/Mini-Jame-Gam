@@ -1,19 +1,32 @@
 extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var player: CharacterBody2D = $"."
-@onready var jump: AudioStreamPlayer = $Jump
-@onready var timefreeze_whistle: AudioStreamPlayer = $"Timefreeze&whistle"
-@onready var timeunfreeze: AudioStreamPlayer = $Timeunfreeze
+
+@onready var jump: AudioStreamPlayer = $Node/Jump
+@onready var timefreeze_whistle: AudioStreamPlayer = $"Node/Timefreeze&whistle"
+@onready var timeunfreeze: AudioStreamPlayer = $Node/Timeunfreeze
+@onready var maintheme: AudioStreamPlayer = $Node/Maintheme
+@onready var walk: AudioStreamPlayer = $Node/Walk
+@onready var walk_timer: Timer = $Node/Walk/Timer
 
 const SPEED = 340.0
 const JUMP_VELOCITY = -930.0
 var alive = true
 var stop_time = false
 
+
+
+func _ready() -> void:
+	walk_timer.one_shot = true
+	walk_timer.wait_time = 0.25
+	walk_timer.start()
+	
+
 func respawn():
 	await get_tree().create_timer(1.0).timeout
 	get_tree().reload_current_scene()
 	alive = true
+
 
 func _physics_process(delta: float) -> void:
 	
@@ -48,6 +61,9 @@ func _physics_process(delta: float) -> void:
 			animated_sprite_2d.animation = "idling"
 		elif direction > 0 or direction < 0:
 			animated_sprite_2d.animation = "running"
+			if walk_timer.is_stopped():
+				walk.play()
+				walk_timer.start()
 	else:
 		animated_sprite_2d.animation = "jumping"
 		
