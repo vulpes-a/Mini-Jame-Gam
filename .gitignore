@@ -17,3 +17,6 @@ mono_crash.*.json
 
 # Fl Studio
 **/Backup
+
+# Builds
+**/build

@@ -19,7 +19,7 @@ func _ready() -> void:
 		audiostreams.maintheme.play()
 	if not audiostreams.freezetheme.playing:
 		audiostreams.freezetheme.play()
-		audiostreams.freezetheme.stream_paused = true
+	audiostreams.freezetheme.stream_paused = true
 
 	# Load first level
 	load_level(levels[current_level])
