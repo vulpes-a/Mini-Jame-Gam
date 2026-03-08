@@ -1,6 +1,6 @@
 extends Button
 @onready var animated_sprite_2d: AnimatedSprite2D = $button3/AnimatedSprite2D
-@onready var parede_que_sobe: TileMapLayer = $Parede_que_sobe
+@onready var parede_que_sobe: TileMapLayer = $button3/Parede_que_sobe
 @onready var player: CharacterBody2D = $"../player"
 
 
