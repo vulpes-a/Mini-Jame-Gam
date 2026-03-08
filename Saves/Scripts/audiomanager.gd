@@ -22,14 +22,13 @@ func _process(_delta: float) -> void:
 func freeze_theme() -> void:
 	if not freezetheme.stream_paused:
 		return
-	prints(maintheme.get_playback_position()*(4.0/3.0))
 	maintheme.stream_paused = true
 	freezetheme.stream_paused = false
-	freezetheme.seek(maintheme.get_playback_position()*(4.0/3.0))
+	freezetheme.seek(maintheme.get_playback_position()*(2.0))
 	
 func unfreeze_theme() -> void:
 	if freezetheme.stream_paused:
 		return
 	maintheme.stream_paused = false
 	freezetheme.stream_paused = true
-	maintheme.seek(freezetheme.get_playback_position()*(3.0/4.0))
+	maintheme.seek(freezetheme.get_playback_position()*(1.0/2.0))
