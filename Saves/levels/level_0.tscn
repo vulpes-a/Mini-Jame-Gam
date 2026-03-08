@@ -2,28 +2,20 @@
 
 [ext_resource type="Texture2D" uid="uid://dfyycfpmaweks" path="res://assets/images/Background/sky.png" id="1_4deq5"]
 [ext_resource type="PackedScene" uid="uid://dumsmjvx3k20l" path="res://Saves/player.tscn" id="3_0aauq"]
+[ext_resource type="Texture2D" uid="uid://btt7rpnauvnip" path="res://assets/images/button/placapressao2.png" id="3_f5xkx"]
+[ext_resource type="Texture2D" uid="uid://cd5j743axfsws" path="res://assets/images/button/placapressao1.png" id="4_ijh3q"]
 [ext_resource type="PackedScene" uid="uid://ch3vttbofd2ro" path="res://Saves/nextlevel.tscn" id="4_m4o1h"]
 [ext_resource type="Script" uid="uid://bqnai3hkfnv5a" path="res://Saves/Scripts/button.gd" id="5_f5j4t"]
-[ext_resource type="Texture2D" uid="uid://cckap5lyhcpcu" path="res://assets/images/button/Button (1).png" id="6_4deq5"]
-[ext_resource type="PackedScene" uid="uid://gxnk0dv6voe" path="res://Saves/fox.tscn" id="7_f5xkx"]
 [ext_resource type="Texture2D" uid="uid://crlneg4vkpwlk" path="res://assets/images/tilemap/tilesset.png" id="7_ijh3q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4deq5"]
-size = Vector2(34, 15)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f5xkx"]
-atlas = ExtResource("6_4deq5")
-region = Rect2(31, 19, 31, 19)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ijh3q"]
-atlas = ExtResource("6_4deq5")
-region = Rect2(0, 19, 31, 19)
+size = Vector2(89, 18.5)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2d8ks"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_f5xkx")
+"texture": ExtResource("3_f5xkx")
 }],
 "loop": true,
 "name": &"pressed",
@@ -31,7 +23,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ijh3q")
+"texture": ExtResource("4_ijh3q")
 }],
 "loop": true,
 "name": &"unpressed",
@@ -217,38 +209,35 @@ scale = Vector2(3, 3)
 texture = ExtResource("1_4deq5")
 
 [node name="Button1" type="Button" parent="." unique_id=259951827 groups=["Player"]]
-offset_left = 1137.0
-offset_top = 616.0
-offset_right = 1145.0
-offset_bottom = 624.0
+offset_left = 1139.0
+offset_top = 626.0
+offset_right = 1147.0
+offset_bottom = 634.0
 script = ExtResource("5_f5j4t")
 
 [node name="button1" type="Area2D" parent="Button1" unique_id=1542145367]
 position = Vector2(10, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Button1/button1" unique_id=442164151]
-position = Vector2(-5, 1)
+position = Vector2(-9, -22)
 shape = SubResource("RectangleShape2D_4deq5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Button1/button1" unique_id=574672533 groups=["Player"]]
-position = Vector2(-5.9999485, 0.99997663)
-scale = Vector2(1.032259, 0.96052885)
+texture_filter = 1
+position = Vector2(-7.9999485, -46.000023)
+scale = Vector2(3, 2.793)
 sprite_frames = SubResource("SpriteFrames_2d8ks")
 animation = &"unpressed"
 
 [node name="Parede_que_sobe" type="TileMapLayer" parent="Button1" unique_id=1845513092]
 texture_filter = 1
-position = Vector2(11, 8)
+position = Vector2(11, 26)
 scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAABAPv/AAAAAAEAAAABAPr/AAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAACAPr/AAACAAEAAAACAPv/AAADAAEAAAACAPn/AAADAAIAAAA=")
 tile_set = SubResource("TileSet_2d8ks")
 
 [node name="Nextlevel" parent="." unique_id=1609801700 instance=ExtResource("4_m4o1h")]
 position = Vector2(1259, 384)
-
-[node name="Fox" parent="." unique_id=1663632828 instance=ExtResource("7_f5xkx")]
-position = Vector2(404, 588)
-scale = Vector2(0.8, 0.8)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1007929947]
 position = Vector2(-4, 0)

@@ -22,8 +22,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	animated_sprite_2d.animation = "unpressed"
 	if body.is_in_group("Player") and player.stop_time == false:
-		parede_que_sobe.position.y = 10
+		parede_que_sobe.position.y = 16
 	else:
 		if body.is_in_group("Player"):
 			await get_tree().create_timer(6.0).timeout
-			parede_que_sobe.position.y = 10
+			parede_que_sobe.position.y = 16
