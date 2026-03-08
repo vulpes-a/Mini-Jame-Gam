@@ -233,11 +233,7 @@ animation = &"unpressed"
 texture_filter = 1
 position = Vector2(11, 26)
 scale = Vector2(3, 3)
-<<<<<<< Updated upstream
 tile_map_data = PackedByteArray("AAACAPr/AAACAAEAAAACAPv/AAADAAEAAAACAPn/AAADAAIAAAA=")
-=======
-tile_map_data = PackedByteArray("AAACAPr/AAACAAEAAAACAPv/AAADAAEAAAA=")
->>>>>>> Stashed changes
 tile_set = SubResource("TileSet_2d8ks")
 
 [node name="Nextlevel" parent="." unique_id=1609801700 instance=ExtResource("4_m4o1h")]
