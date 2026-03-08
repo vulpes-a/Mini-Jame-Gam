@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var player: CharacterBody2D = $"."
 
 @onready var jump: AudioStreamPlayer = $Node/Jump
+@onready var land: AudioStreamPlayer = $Node/Land
 @onready var timefreeze_whistle: AudioStreamPlayer = $"Node/Timefreeze&whistle"
 @onready var timeunfreeze: AudioStreamPlayer = $Node/Timeunfreeze
 @onready var maintheme: AudioStreamPlayer = $Node/Maintheme
@@ -13,6 +14,7 @@ const SPEED = 340.0
 const JUMP_VELOCITY = -930.0
 var alive = true
 var stop_time = false
+var is_jumping = false
 
 
 
@@ -39,12 +41,8 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		is_jumping = true
 		#animated_sprite_2d.animation = "jumping"
-
-	# Handle jump.
-	if Input.is_action_just_pressed("up") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-		jump.play()
 		
 	if Input.is_action_just_released("up"):
 		player.velocity.y *= 0.5
@@ -64,6 +62,10 @@ func _physics_process(delta: float) -> void:
 			if walk_timer.is_stopped():
 				walk.play()
 				walk_timer.start()
+				
+		if is_jumping:
+			is_jumping = false
+			land.play()
 	else:
 		animated_sprite_2d.animation = "jumping"
 		
@@ -78,6 +80,11 @@ func _physics_process(delta: float) -> void:
 		stop_time = false
 
 	move_and_slide()
+	
+	# Handle jump.
+	if Input.is_action_just_pressed("up") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+		jump.play()
 
 	if direction == 1.0:
 		animated_sprite_2d.flip_h = false
