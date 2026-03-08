@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://cg1t3d6fbd318"]
 
-[ext_resource type="Texture2D" uid="uid://dfyycfpmaweks" path="res://assets/images/Background/sky.png" id="1_4deq5"]
+[ext_resource type="Texture2D" uid="uid://bu3fv6cqynn0h" path="res://assets/images/Background/fundo.png" id="1_f5xkx"]
 [ext_resource type="PackedScene" uid="uid://dumsmjvx3k20l" path="res://Saves/player.tscn" id="3_0aauq"]
 [ext_resource type="Texture2D" uid="uid://btt7rpnauvnip" path="res://assets/images/button/placapressao2.png" id="3_f5xkx"]
 [ext_resource type="Texture2D" uid="uid://cd5j743axfsws" path="res://assets/images/button/placapressao1.png" id="4_ijh3q"]
@@ -203,10 +203,13 @@ sources/0 = SubResource("TileSetAtlasSource_2d8ks")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=978520598]
 texture_filter = 1
-offset_right = 425.6667
-offset_bottom = 256.0
+offset_left = 9.999992
+offset_top = -126.000015
+offset_right = 640.6667
+offset_bottom = 280.6667
 scale = Vector2(3, 3)
-texture = ExtResource("1_4deq5")
+texture = ExtResource("1_f5xkx")
+expand_mode = 1
 
 [node name="Button1" type="Button" parent="." unique_id=259951827 groups=["Player"]]
 offset_left = 1139.0

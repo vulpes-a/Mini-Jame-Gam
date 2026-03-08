@@ -1,13 +1,13 @@
 [gd_scene format=4 uid="uid://87cmam7aowk2"]
 
-[ext_resource type="Texture2D" uid="uid://dfyycfpmaweks" path="res://assets/images/Background/sky.png" id="1_rf314"]
+[ext_resource type="Texture2D" uid="uid://bu3fv6cqynn0h" path="res://assets/images/Background/fundo.png" id="1_yfbq3"]
 [ext_resource type="PackedScene" uid="uid://dumsmjvx3k20l" path="res://Saves/player.tscn" id="3_qfues"]
 [ext_resource type="Texture2D" uid="uid://crlneg4vkpwlk" path="res://assets/images/tilemap/tilesset.png" id="4_bc56t"]
 [ext_resource type="Texture2D" uid="uid://cm1br4kinoeui" path="res://assets/images/Espinhos/stalactite1.png" id="4_dj74y"]
 [ext_resource type="PackedScene" uid="uid://ch3vttbofd2ro" path="res://Saves/nextlevel.tscn" id="5_71t1d"]
 [ext_resource type="Texture2D" uid="uid://c2dquq1qsidw3" path="res://assets/images/Espinhos/stalactite2.png" id="5_swlyo"]
 [ext_resource type="PackedScene" uid="uid://bc82apvaxarqw" path="res://Saves/spike.tscn" id="6_kss1r"]
-[ext_resource type="Script" uid="uid://ctn863fs0f0nv" path="res://Saves/Scripts/falling_ice.gd" id="6_qijoy"]
+[ext_resource type="Script" path="res://Saves/Scripts/falling_ice.gd" id="6_qijoy"]
 [ext_resource type="Script" uid="uid://doodfxpywwths" path="res://Saves/Scripts/nextlevel2.gd" id="7_rf314"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vdma4"]
@@ -140,13 +140,15 @@ sources/0 = SubResource("TileSetAtlasSource_gwhfa")
 
 [node name="level2" type="Node2D" unique_id=1370004062]
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1750302745]
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1427808157]
 texture_filter = 1
-offset_right = 426.6667
-offset_bottom = 240.0
+offset_left = -659.0
+offset_top = -258.0
+offset_right = 96.66669
+offset_bottom = 237.66669
 scale = Vector2(3, 3)
-texture = ExtResource("1_rf314")
-stretch_mode = 1
+texture = ExtResource("1_yfbq3")
+expand_mode = 1
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2025618774]
 texture_filter = 1

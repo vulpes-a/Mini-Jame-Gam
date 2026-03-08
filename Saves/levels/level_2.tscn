@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://dxndo1yjrysfo"]
 
-[ext_resource type="Texture2D" uid="uid://dfyycfpmaweks" path="res://assets/images/Background/sky.png" id="1_j2cn4"]
+[ext_resource type="Texture2D" uid="uid://bu3fv6cqynn0h" path="res://assets/images/Background/fundo.png" id="1_s1cof"]
 [ext_resource type="Texture2D" uid="uid://crlneg4vkpwlk" path="res://assets/images/tilemap/tilesset.png" id="2_pc84n"]
 [ext_resource type="Texture2D" uid="uid://cm1br4kinoeui" path="res://assets/images/Espinhos/stalactite1.png" id="2_s1cof"]
 [ext_resource type="PackedScene" uid="uid://dumsmjvx3k20l" path="res://Saves/player.tscn" id="3_nrbth"]
@@ -320,12 +320,15 @@ animations = [{
 
 [node name="level_2" type="Node2D" unique_id=2027397033]
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=249287222]
-offset_right = 426.6667
-offset_bottom = 240.0
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1200766337]
+texture_filter = 1
+offset_left = -1164.0
+offset_top = -213.0
+offset_right = -335.3333
+offset_bottom = 336.0
 scale = Vector2(3, 3)
-texture = ExtResource("1_j2cn4")
-stretch_mode = 1
+texture = ExtResource("1_s1cof")
+expand_mode = 1
 
 [node name="Spikes" type="Node2D" parent="." unique_id=1168856868]
 
