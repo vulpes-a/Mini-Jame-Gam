@@ -8,8 +8,9 @@ extends CharacterBody2D
 const SPEED = 340.0
 const JUMP_VELOCITY = -930.0
 var alive = true
-var stop_time = false
 var is_jumping = false
+var stop_time = false
+var is_apitando = false
 
 
 
@@ -50,9 +51,11 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 	if is_on_floor():
-		if animated_sprite_2d.animation_finished:
+		if is_apitando:
+			animated_sprite_2d.animation = "apitando"
+		else:
 			if direction == 0:
-				animated_sprite_2d.animation = "idling"
+					animated_sprite_2d.animation = "idling"
 			elif direction > 0 or direction < 0:
 				animated_sprite_2d.animation = "running"
 				if audiostreams.walk_timer.is_stopped():
@@ -70,10 +73,12 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("stop_time") and !stop_time:
 		animated_sprite_2d.animation = "apitando"
 		stop_time = true
+		is_apitando = true
 		audiostreams.timefreeze_whistle.play()
 		audiostreams.freeze_theme()
-		
-		await get_tree().create_timer(3.5).timeout
+		await get_tree().create_timer(1.0).timeout
+		is_apitando = false
+		await get_tree().create_timer(2.5).timeout
 		audiostreams.timeunfreeze.play()
 		await get_tree().create_timer(2.5).timeout
 
