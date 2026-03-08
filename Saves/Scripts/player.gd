@@ -50,13 +50,14 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 	if is_on_floor():
-		if direction == 0:
-			animated_sprite_2d.animation = "idling"
-		elif direction > 0 or direction < 0:
-			animated_sprite_2d.animation = "running"
-			if audiostreams.walk_timer.is_stopped():
-				audiostreams.walk.play()
-				audiostreams.walk_timer.start()
+		if animated_sprite_2d.animation_finished:
+			if direction == 0:
+				animated_sprite_2d.animation = "idling"
+			elif direction > 0 or direction < 0:
+				animated_sprite_2d.animation = "running"
+				if audiostreams.walk_timer.is_stopped():
+					audiostreams.walk.play()
+					audiostreams.walk_timer.start()
 				
 		if is_jumping:
 			is_jumping = false
@@ -67,6 +68,7 @@ func _physics_process(delta: float) -> void:
 	# Stopping time
 	
 	if Input.is_action_just_pressed("stop_time") and !stop_time:
+		animated_sprite_2d.animation = "apitando"
 		stop_time = true
 		audiostreams.timefreeze_whistle.play()
 		audiostreams.freeze_theme()
