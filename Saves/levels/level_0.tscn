@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://cg1t3d6fbd318"]
 
+[ext_resource type="Texture2D" uid="uid://dfyycfpmaweks" path="res://assets/images/Background/sky.png" id="1_4deq5"]
 [ext_resource type="Texture2D" uid="uid://cg57k3cc3e3cv" path="res://assets/images/tilemap/tileset.png" id="1_5iimi"]
-[ext_resource type="Texture2D" uid="uid://c4o71ddtgw87n" path="res://assets/images/Background/back.png" id="1_rh4wy"]
 [ext_resource type="PackedScene" uid="uid://dumsmjvx3k20l" path="res://Saves/player.tscn" id="3_0aauq"]
 [ext_resource type="PackedScene" uid="uid://ch3vttbofd2ro" path="res://Saves/nextlevel.tscn" id="4_m4o1h"]
 [ext_resource type="Script" uid="uid://bqnai3hkfnv5a" path="res://Saves/Scripts/button.gd" id="5_f5j4t"]
@@ -326,11 +326,10 @@ sources/0 = SubResource("TileSetAtlasSource_rty2u")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=978520598]
 texture_filter = 1
-offset_right = 426.6667
-offset_bottom = 240.0
+offset_right = 425.6667
+offset_bottom = 256.0
 scale = Vector2(3, 3)
-texture = ExtResource("1_rh4wy")
-stretch_mode = 1
+texture = ExtResource("1_4deq5")
 
 [node name="Button1" type="Button" parent="." unique_id=259951827 groups=["Player"]]
 offset_left = 1137.0

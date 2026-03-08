@@ -4,24 +4,24 @@
 [ext_resource type="Script" uid="uid://b85rlralcpfgk" path="res://Saves/Scripts/player.gd" id="1_yf3dv"]
 [ext_resource type="Texture2D" uid="uid://0cnlychkfedt" path="res://assets/images/player/hurt-2.png" id="2_yf3dv"]
 [ext_resource type="Texture2D" uid="uid://c2bnae0f3q2db" path="res://assets/images/player/parado1.png" id="4_7ei0c"]
+[ext_resource type="Texture2D" uid="uid://dfrej1dkgygcv" path="res://assets/images/player/parado2.png" id="5_kqdj7"]
+[ext_resource type="Texture2D" uid="uid://dpob2nmb83vl6" path="res://assets/images/player/parado3.png" id="6_cr47m"]
+[ext_resource type="Texture2D" uid="uid://cjc2vpqgch52r" path="res://assets/images/player/parado4.png" id="7_j7mrm"]
+[ext_resource type="Texture2D" uid="uid://cqiybe32f0y0b" path="res://assets/images/player/parado5.png" id="8_q6o0n"]
 [ext_resource type="Texture2D" uid="uid://rbv8t5ghmdve" path="res://assets/images/player/salto2.png" id="8_rwkbh"]
 [ext_resource type="Texture2D" uid="uid://dlm0irctxa2m6" path="res://assets/images/player/salto3.png" id="9_kqdj7"]
 [ext_resource type="Texture2D" uid="uid://c4inn1kh5hey1" path="res://assets/images/player/salto4.png" id="10_cr47m"]
 [ext_resource type="Texture2D" uid="uid://comeeku185acx" path="res://assets/images/player/salto5.png" id="11_j7mrm"]
-[ext_resource type="Texture2D" uid="uid://b77xpxxj5btej" path="res://assets/images/player/run-1.png" id="12_bmkrt"]
 [ext_resource type="Texture2D" uid="uid://b46m0vmen1b5d" path="res://assets/images/player/salto6.png" id="12_q6o0n"]
 [ext_resource type="Texture2D" uid="uid://bcglg847h3kb6" path="res://assets/images/player/salto7.png" id="13_bmkrt"]
-[ext_resource type="Texture2D" uid="uid://cj25f2i7rbs3r" path="res://assets/images/player/run-2.png" id="13_ft8c8"]
-[ext_resource type="Texture2D" uid="uid://cwclmuykfu662" path="res://assets/images/player/run-3.png" id="14_e0raa"]
 [ext_resource type="Texture2D" uid="uid://b2r74l20ft4sm" path="res://assets/images/player/salto8.png" id="14_ft8c8"]
-[ext_resource type="Texture2D" uid="uid://nrg1jmkdpq08" path="res://assets/images/player/run-4.png" id="15_5fqae"]
 [ext_resource type="Texture2D" uid="uid://2wae1avrp3kg" path="res://assets/images/player/salto9.png" id="15_e0raa"]
 [ext_resource type="Texture2D" uid="uid://vpqkdeaxh8ii" path="res://assets/images/player/salto10.png" id="16_5fqae"]
-[ext_resource type="Texture2D" uid="uid://cfgms8qnwnttx" path="res://assets/images/player/run-5.png" id="16_k40b0"]
 [ext_resource type="Texture2D" uid="uid://clxcow6e4hcj" path="res://assets/images/player/salto11.png" id="17_k40b0"]
-[ext_resource type="Texture2D" uid="uid://biunmr84w1qs2" path="res://assets/images/player/run-6.png" id="17_wn6pk"]
-[ext_resource type="Texture2D" uid="uid://cflt882p6w6w6" path="res://assets/images/player/run-7.png" id="18_nppq5"]
-[ext_resource type="Texture2D" uid="uid://d2iy63lgw8ng7" path="res://assets/images/player/run-8.png" id="19_55ci2"]
+[ext_resource type="Texture2D" uid="uid://cf442hcb2mab6" path="res://assets/images/player/andando1.png" id="19_bmkrt"]
+[ext_resource type="Texture2D" uid="uid://ck6i7mrlb24m3" path="res://assets/images/player/andando2.png" id="20_ft8c8"]
+[ext_resource type="Texture2D" uid="uid://d12lq8vgo36th" path="res://assets/images/player/andando3.png" id="21_e0raa"]
+[ext_resource type="Texture2D" uid="uid://dqjkwldqa8pml" path="res://assets/images/player/andando4.png" id="22_5fqae"]
 [ext_resource type="AudioStream" uid="uid://bn6w6ugotvmi1" path="res://assets/sound/sfx/jump.wav" id="23_rwkbh"]
 [ext_resource type="AudioStream" uid="uid://d2modyp01nauq" path="res://assets/sound/sfx/timefreeze&whistle.wav" id="24_kqdj7"]
 [ext_resource type="AudioStream" uid="uid://dan64jxnhxtj7" path="res://assets/sound/sfx/timeunfreeze.wav" id="25_cr47m"]
@@ -43,6 +43,18 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("4_7ei0c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kqdj7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cr47m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_j7mrm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_q6o0n")
 }],
 "loop": true,
 "name": &"idling",
@@ -85,28 +97,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("12_bmkrt")
+"texture": ExtResource("19_bmkrt")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_ft8c8")
+"texture": ExtResource("20_ft8c8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_e0raa")
+"texture": ExtResource("21_e0raa")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_5fqae")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_k40b0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_wn6pk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_nppq5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_55ci2")
+"texture": ExtResource("22_5fqae")
 }],
 "loop": true,
 "name": &"running",
@@ -123,9 +123,9 @@ script = ExtResource("1_yf3dv")
 texture_filter = 1
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_e40nb")
-animation = &"jumping"
+animation = &"hurting"
 autoplay = "idling"
-frame_progress = 0.8426226
+frame_progress = 0.62443286
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=319657498]

@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://87cmam7aowk2"]
 
-[ext_resource type="Texture2D" uid="uid://c4o71ddtgw87n" path="res://assets/images/Background/back.png" id="1_0kf8b"]
+[ext_resource type="Texture2D" uid="uid://dfyycfpmaweks" path="res://assets/images/Background/sky.png" id="1_rf314"]
 [ext_resource type="Texture2D" uid="uid://cg57k3cc3e3cv" path="res://assets/images/tilemap/tileset.png" id="2_qfues"]
 [ext_resource type="PackedScene" uid="uid://dumsmjvx3k20l" path="res://Saves/player.tscn" id="3_qfues"]
 [ext_resource type="Script" uid="uid://cx8eh3el38joa" path="res://Saves/Scripts/falling_spikes.gd" id="4_kss1r"]
@@ -387,7 +387,7 @@ texture_filter = 1
 offset_right = 426.6667
 offset_bottom = 240.0
 scale = Vector2(3, 3)
-texture = ExtResource("1_0kf8b")
+texture = ExtResource("1_rf314")
 stretch_mode = 1
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=881048533]

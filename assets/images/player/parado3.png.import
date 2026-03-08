@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfgms8qnwnttx"
-path="res://.godot/imported/run-5.png-a352497de991257f815f8154eca63f10.ctex"
+uid="uid://dpob2nmb83vl6"
+path="res://.godot/imported/parado3.png-d228677cb5e07d836dcf0f14ad4b30b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/player/run-5.png"
-dest_files=["res://.godot/imported/run-5.png-a352497de991257f815f8154eca63f10.ctex"]
+source_file="res://assets/images/player/parado3.png"
+dest_files=["res://.godot/imported/parado3.png-d228677cb5e07d836dcf0f14ad4b30b6.ctex"]
 
 [params]
 

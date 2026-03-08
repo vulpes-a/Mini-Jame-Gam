@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cj25f2i7rbs3r"
-path="res://.godot/imported/run-2.png-3b03ceb321b173b19533ad1db50daeb2.ctex"
+uid="uid://ck6i7mrlb24m3"
+path="res://.godot/imported/andando2.png-3a196e4782812ad5f6dc0e213eb913f4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/player/run-2.png"
-dest_files=["res://.godot/imported/run-2.png-3b03ceb321b173b19533ad1db50daeb2.ctex"]
+source_file="res://assets/images/player/andando2.png"
+dest_files=["res://.godot/imported/andando2.png-3a196e4782812ad5f6dc0e213eb913f4.ctex"]
 
 [params]
 
