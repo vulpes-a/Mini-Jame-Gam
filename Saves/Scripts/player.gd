@@ -69,9 +69,15 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("stop_time") and !stop_time:
 		stop_time = true
 		audiostreams.timefreeze_whistle.play()
+		audiostreams.freeze_theme()
+		prints("Player")
+		
 		await get_tree().create_timer(3.5).timeout
 		audiostreams.timeunfreeze.play()
 		await get_tree().create_timer(2.5).timeout
+
+		audiostreams.unfreeze_theme()
+		audiostreams.freezetheme.volume_db = 0.0
 		stop_time = false
 
 	move_and_slide()

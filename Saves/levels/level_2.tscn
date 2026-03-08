@@ -3,10 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://dfyycfpmaweks" path="res://assets/images/Background/sky.png" id="1_j2cn4"]
 [ext_resource type="Texture2D" uid="uid://cg57k3cc3e3cv" path="res://assets/images/tilemap/tileset.png" id="2_qfues"]
 [ext_resource type="PackedScene" uid="uid://dumsmjvx3k20l" path="res://Saves/player.tscn" id="3_nrbth"]
-[ext_resource type="Script" uid="uid://bslncqt488mln" path="res://Saves/Scripts/button_3.gd" id="4_qao1q"]
+[ext_resource type="Script" path="res://Saves/Scripts/button_3.gd" id="4_qao1q"]
 [ext_resource type="Texture2D" uid="uid://cckap5lyhcpcu" path="res://assets/images/button/Button (1).png" id="5_iwseq"]
 [ext_resource type="PackedScene" uid="uid://bc82apvaxarqw" path="res://Saves/spike.tscn" id="6_iwseq"]
-[ext_resource type="Script" uid="uid://3gya8hsp1o2n" path="res://Saves/Scripts/prensa.gd" id="7_g6qpn"]
+[ext_resource type="Script" path="res://Saves/Scripts/prensa.gd" id="7_g6qpn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qao1q"]
 texture = ExtResource("2_qfues")

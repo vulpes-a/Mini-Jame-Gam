@@ -1,11 +1,8 @@
 [gd_scene format=3 uid="uid://dfe2qyfe2imvq"]
 
 [ext_resource type="Script" uid="uid://bq4o23wmnu8m7" path="res://Saves/Scripts/main.gd" id="1_gbppe"]
-[ext_resource type="PackedScene" uid="uid://dumsmjvx3k20l" path="res://Saves/player.tscn" id="2_gbppe"]
 
 [node name="main" type="Node2D" unique_id=157494617]
 script = ExtResource("1_gbppe")
 
 [node name="LevelContainer" type="Node2D" parent="." unique_id=1781248638]
-
-[node name="Player" parent="." unique_id=418627504 instance=ExtResource("2_gbppe")]

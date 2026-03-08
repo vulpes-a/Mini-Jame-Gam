@@ -3,7 +3,7 @@ extends Node2D
 # Nodes in Main.tscn
 @onready var level_container: Node2D = $LevelContainer
 @onready var player: CharacterBody2D = $Player
-@onready var theme: AudioStreamPlayer = get_node("/root/AudioStreams").maintheme
+@onready var audiostreams: Node = get_node("/root/AudioStreams")
 
 # Track current level number
 var current_level := 0
@@ -15,8 +15,11 @@ var levels := [
 
 func _ready() -> void:
 	# Play theme once
-	if not theme.playing:
-		theme.play()
+	if not audiostreams.maintheme.playing:
+		audiostreams.maintheme.play()
+	if not audiostreams.freezetheme.playing:
+		audiostreams.freezetheme.play()
+		audiostreams.freezetheme.stream_paused = true
 
 	# Load first level
 	load_level(levels[current_level])
