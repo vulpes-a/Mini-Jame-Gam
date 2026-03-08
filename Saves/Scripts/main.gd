@@ -3,7 +3,7 @@ extends Node2D
 # Nodes in Main.tscn
 @onready var level_container: Node2D = $LevelContainer
 @onready var player: CharacterBody2D = $Player
-@onready var theme: AudioStreamPlayer = $AudioStreamPlayer
+@onready var theme: AudioStreamPlayer = get_node("/root/AudioStreams").maintheme
 
 # Track current level number
 var current_level := 0

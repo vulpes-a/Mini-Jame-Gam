@@ -1,14 +1,9 @@
 extends CharacterBody2D
+
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var player: CharacterBody2D = $"."
 
-@onready var jump: AudioStreamPlayer = $Node/Jump
-@onready var land: AudioStreamPlayer = $Node/Land
-@onready var timefreeze_whistle: AudioStreamPlayer = $"Node/Timefreeze&whistle"
-@onready var timeunfreeze: AudioStreamPlayer = $Node/Timeunfreeze
-@onready var maintheme: AudioStreamPlayer = $Node/Maintheme
-@onready var walk: AudioStreamPlayer = $Node/Walk
-@onready var walk_timer: Timer = $Node/Walk/Timer
+@onready var audiostreams = get_node("/root/AudioStreams")
 
 const SPEED = 340.0
 const JUMP_VELOCITY = -930.0
@@ -19,9 +14,9 @@ var is_jumping = false
 
 
 func _ready() -> void:
-	walk_timer.one_shot = true
-	walk_timer.wait_time = 0.25
-	walk_timer.start()
+	audiostreams.walk_timer.one_shot = true
+	audiostreams.walk_timer.wait_time = 0.25
+	audiostreams.walk_timer.start()
 	
 
 func respawn():
@@ -59,13 +54,13 @@ func _physics_process(delta: float) -> void:
 			animated_sprite_2d.animation = "idling"
 		elif direction > 0 or direction < 0:
 			animated_sprite_2d.animation = "running"
-			if walk_timer.is_stopped():
-				walk.play()
-				walk_timer.start()
+			if audiostreams.walk_timer.is_stopped():
+				audiostreams.walk.play()
+				audiostreams.walk_timer.start()
 				
 		if is_jumping:
 			is_jumping = false
-			land.play()
+			audiostreams.land.play()
 	else:
 		animated_sprite_2d.animation = "jumping"
 		
@@ -73,18 +68,18 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("stop_time") and !stop_time:
 		stop_time = true
-		timefreeze_whistle.play()
+		audiostreams.timefreeze_whistle.play()
 		await get_tree().create_timer(3.5).timeout
-		timeunfreeze.play()
+		audiostreams.timeunfreeze.play()
 		await get_tree().create_timer(2.5).timeout
 		stop_time = false
 
 	move_and_slide()
 	
-	# Handle jump.
+	# Handles jump.
 	if Input.is_action_just_pressed("up") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-		jump.play()
+		audiostreams.jump.play()
 
 	if direction == 1.0:
 		animated_sprite_2d.flip_h = false
