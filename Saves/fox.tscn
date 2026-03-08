@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b0ttab2ug11xk" path="res://Saves/Scripts/fox.gd" id="1_1u5to"]
 [ext_resource type="Texture2D" uid="uid://deemyog5hpxhf" path="res://assets/images/fox/fox-sheet.png" id="1_stjft"]
+[ext_resource type="PackedScene" uid="uid://dumsmjvx3k20l" path="res://Saves/player.tscn" id="3_sbg8j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1u5to"]
 atlas = ExtResource("1_stjft")
@@ -83,6 +84,10 @@ shape = SubResource("CapsuleShape2D_stjft")
 [node name="Timer" type="Timer" parent="." unique_id=189043324]
 wait_time = 2.0
 autostart = true
+
+[node name="player" parent="." unique_id=418627504 instance=ExtResource("3_sbg8j")]
+visible = false
+position = Vector2(-61, 938)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
